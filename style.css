@@ -1,0 +1,145 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Navigation Bar */
+.navbar {
+    background-color: #2c3e50;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 5%;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.navbar .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #2ecc71;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #2ecc71;
+}
+
+/* Sections */
+.section {
+    padding: 100px 5% 60px 5%;
+    min-height: 60vh;
+}
+
+.bg-light {
+    background-color: #f9f9f9;
+}
+
+.content {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    border-bottom: 3px solid #2ecc71;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+/* Grids */
+.domain-grid, .team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.card, .team-member {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.card h3, .team-member h3 {
+    color: #2980b9;
+    margin-bottom: 10px;
+}
+
+/* Tables */
+.milestone-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.milestone-table th, .milestone-table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.milestone-table th {
+    background-color: #2980b9;
+    color: white;
+}
+
+/* Lists */
+.doc-list {
+    list-style: none;
+}
+
+.doc-list li {
+    margin-bottom: 15px;
+}
+
+.doc-list a {
+    text-decoration: none;
+    color: #c0392b;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.doc-list a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
