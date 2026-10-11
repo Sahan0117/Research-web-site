@@ -1,151 +1,1594 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Medicinal Plant Authentication System</title>
+    <meta name="description"
+        content="Bio-Heritage AI: Multi-Modal Framework for Preserving Sri Lankan Indigenous Medical Knowledge. SLIIT CDAP Research 2026 Group R26J-IT-020.">
+    <meta name="keywords"
+        content="SLIIT, CDAP, Bio-Heritage AI, Ayurvedic Plants, Deep Learning, Leaf Health, Climate Forecasting, Sri Lanka">
+    <meta name="author" content="SLIIT CDAP Research Group R26J-IT-020">
+    <title>Bio-Heritage AI | SLIIT CDAP Research Project 2026</title>
+
+    <!-- Google Fonts for Modern Academic Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400;1,600&display=swap"
+        rel="stylesheet">
+
+    <!-- Pure CSS Stylesheet (Strictly HTML and CSS Only) -->
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <!-- Navigation Bar -->
-    <nav class="navbar">
-        <div class="logo">Ayurveda AI</div>
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#domain">Domain</a></li>
-            <li><a href="#milestones">Milestones</a></li>
-            <li><a href="#documents">Documents</a></li>
-            <li><a href="#slides">Slides</a></li>
-            <li><a href="#about">About Us</a></li>
-            <li><a href="#contact">Contact Us</a></li>
-        </ul>
+    <!-- 1. Top CDAP Institutional Notice Bar (Slide 8 Reference: http://cdap.sliit.lk/) -->
+    <div class="top-notice-bar" id="top-portal-notice">
+        <div>
+            <span>🏛️ Sri Lanka Institute of Information Technology (SLIIT) • Faculty of Computing</span>
+            <span style="margin: 0 8px; opacity: 0.5;">|</span>
+            <span>Comprehensive Design &amp; Analysis Project (CDAP) 2026</span>
+        </div>
+        <div>
+            <span>Official CDAP Portal: </span>
+            <a href="http://cdap.sliit.lk/" target="_blank" rel="noopener noreferrer" class="portal-link">cdap.sliit.lk
+                ↗</a>
+            <span
+                style="margin-left: 10px; background: rgba(197, 168, 128, 0.2); padding: 2px 8px; border-radius: 4px; font-weight: 700; color: #fde68a;">Group:
+                R26J-IT-020</span>
+        </div>
+    </div>
+
+    <!-- 2. Sticky Navigation Bar (Slide 8: Main Tab Area Criteria) -->
+    <nav class="navbar" id="main-navigation">
+        <div class="nav-container">
+            <a href="#home" class="brand" title="Bio-Heritage AI Home">
+                <div class="brand-logo-icon">🌿</div>
+                <div class="brand-text">
+                    <span class="brand-title">Bio-Heritage <span>AI</span></span>
+                    <span class="brand-sub">SLIIT Research 2026</span>
+                </div>
+            </a>
+
+            <!-- The 7 Main Tabs Required by Slide 8 -->
+            <ul class="nav-links" id="nav-menu-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#domain">Domain</a></li>
+                <li><a href="#milestones">Milestones</a></li>
+                <li><a href="#documents">Documents</a></li>
+                <li><a href="#slides">Slides of past presentations</a></li>
+                <li><a href="#about">About us</a></li>
+                <li><a href="#contact" class="nav-cta-btn">Contact us</a></li>
+            </ul>
+        </div>
     </nav>
 
-    <!-- Home Section -->
-    <section id="home" class="section">
-        <div class="content">
-            <h1>Safe & Accurate Sri Lankan Medicinal Plant Authentication</h1>
-            <p><strong>Abstract:</strong> The misidentification of Sri Lankan medicinal plants poses a severe health risk, as highly utilized Ayurvedic herbs are frequently confused with visually similar toxic substitutes. This project presents a cohesive, AI-driven digital ecosystem designed to authenticate medicinal plants, securely manage pharmacological data, and facilitate institutional research. The solution integrates an Authentication Engine (EfficientNetB0 with Out-of-Distribution rejection), a Digital Herbarium (MongoDB), and a Batch Analytics module. It prioritizes user safety through explicit 'Visha Haranaya' warnings, achieving an 86.9% accuracy and paving the way for safe digitization of indigenous knowledge.</p>
+    <!-- 3. Table of Contents & Quick Navigation Aids (Slide 9 Requirement) -->
+    <div class="toc-bar" id="table-of-contents-bar">
+        <div class="toc-container">
+            <span class="toc-label">📑 Quick Jump:</span>
+            <ul class="toc-links">
+                <li><a href="#home-abstract">Abstract</a></li>
+                <li><a href="#research-pillars">Core Components</a></li>
+                <li><a href="#domain-lit-survey">1. Literature Survey</a></li>
+                <li><a href="#domain-gap">2. Research Gap</a></li>
+                <li><a href="#domain-problem">3. Research Problem</a></li>
+                <li><a href="#domain-objectives">4. Objectives</a></li>
+                <li><a href="#domain-methodology">5. Methodology</a></li>
+                <li><a href="#domain-tech">6. Technologies</a></li>
+                <li><a href="#milestones-dropdown-menu">Milestone Selector</a></li>
+                <li><a href="#documents">Documents</a></li>
+                <li><a href="#slides">Presentations</a></li>
+                <li><a href="#about">Research Team</a></li>
+                <li><a href="#contact-template-box">Email Template</a></li>
+            </ul>
         </div>
-    </section>
+    </div>
 
-    <!-- Domain Section -->
-    <section id="domain" class="section bg-light">
-        <div class="content">
-            <h2>Domain Information</h2>
-            <div class="domain-grid">
-                <div class="card">
-                    <h3>Research Problem</h3>
-                    <p>Accidental poisoning due to the misidentification of medicinal plants with toxic look-alikes, worsened by the lack of domain-specific constraints in generic botanical apps.</p>
+    <!-- ========================================================================
+         SECTION 1: HOME (Slide 9: General intro, concise abstract, attractive graphics)
+         ======================================================================== -->
+    <section id="home" class="hero-section">
+        <div class="hero-pattern-bg"></div>
+        <div class="content-wrapper hero-grid">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span>Bio-Heritage AI • Multi-Modal Indigenous Knowledge Preservation</span>
                 </div>
-                <div class="card">
-                    <h3>Objectives</h3>
-                    <p>1. High-accuracy classification with toxic weed rejection.<br>2. Secure storage and retrieval of pharmacological profiles.<br>3. Asynchronous batch processing for bulk datasets.</p>
+                <h1>Safe &amp; Accurate <em>Sri Lankan</em> Medicinal Plant Authentication &amp; Health Intelligence
+                </h1>
+                <p class="hero-lead-text">
+                    Bridging centuries-old Ayurvedic wisdom (Hela Vedakama) with state-of-the-art Deep Transfer
+                    Learning, Health-Context-Aware RAG, and Climate Forecasting to safeguard medicinal botanical supply
+                    chains.
+                </p>
+
+                <!-- Project Abstract Box (Explicitly Required on Slide 9) -->
+                <div class="hero-abstract-box" id="home-abstract">
+                    <h4>📜 Abstract &amp; Executive Summary</h4>
+                    <p>
+                        In Sri Lanka's indigenous medicine ecosystem, the therapeutic efficacy of traditional
+                        formulations (such as <em>Kashaya</em>, <em>Arishtam</em>, and <em>Taila</em>) is critically
+                        compromised by two compounding threats: the rampant misidentification of genuine medicinal flora
+                        with morphologically similar, ineffective, or toxic commercial adulterants, and the harvesting
+                        of diseased leaves contaminated by fungal and bacterial pathogens. Furthermore, general large
+                        language models often hallucinate dosage and contraindication advice without accounting for
+                        patient-specific health conditions (e.g., pregnancy, chronic renal conditions, or pharmaceutical
+                        interactions), while shifting climatic patterns threaten endemic herbal sanctuaries.
+                    </p>
+                    <p style="margin-top: 10px;">
+                        This research project presents <strong>Bio-Heritage AI</strong>: a unified, multi-modal
+                        artificial intelligence framework comprising four interconnected systems: (1) An
+                        <strong>Authentication Engine</strong> powered by fine-tuned EfficientNetB0 with
+                        Out-of-Distribution (OOD) rejection trained on 3,095 expert-validated botanical specimens across
+                        21 species; (2) A <strong>Health-Context-Aware RAG Assistant</strong> with SVM intent
+                        classification, Random Forest safety prediction, and SHAP explainability grounded in 1,550
+                        verified herb records; (3) A <strong>Leaf Pathology &amp; Quality Scoring System</strong>
+                        utilizing EfficientNetB4 with an automated Ayurvedic Medicinal Suitability (AMS) Quality Grading
+                        framework (Grades A–D) and harvest withholding period alerts; and (4) A <strong>Climate
+                            Forecasting Engine</strong> leveraging Facebook Prophet to predict 2026–2030 regional
+                        habitat shifts. Together, this ecosystem ensures safety, preserves cultural heritage, and
+                        standardizes Ayurvedic pharmacognosy.
+                    </p>
                 </div>
-                <div class="card">
-                    <h3>Technologies Used</h3>
-                    <p>EfficientNetB0, Grad-CAM, FastAPI, MongoDB (NoSQL), Celery Task Queues, React.js</p>
+
+                <div class="hero-action-row">
+                    <a href="#domain" class="btn-primary">Explore Research Domain ↓</a>
+                    <a href="#milestones" class="btn-secondary">View Milestones &amp; Rubric</a>
+                    <a href="#documents" class="btn-secondary">Research Documents</a>
+                </div>
+            </div>
+
+            <div class="hero-media-wrapper">
+                <div class="hero-card-stack">
+                    <img src="assets/images/welcome_art.png" alt="Bio-Heritage AI Traditional Medicine Art"
+                        loading="lazy">
+                </div>
+                <div class="hero-floating-stat">
+                    <div class="stat-number">97.4%</div>
+                    <div class="stat-desc">Peak Diagnostic Accuracy Across Trained Models</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Milestones Section -->
-    <section id="milestones" class="section">
-        <div class="content">
-            <h2>Project Milestones</h2>
-            <table class="milestone-table">
-                <tr>
-                    <th>Assessment</th>
-                    <th>Status / Date</th>
-                    <th>Marks Allocated</th>
-                </tr>
-                <tr>
-                    <td>Project Proposal</td>
-                    <td>Completed</td>
-                    <td>10%</td>
-                </tr>
-                <tr>
-                    <td>Progress Presentation 1</td>
-                    <td>Completed</td>
-                    <td>15%</td>
-                </tr>
-                <tr>
-                    <td>Progress Presentation 2</td>
-                    <td>Upcoming</td>
-                    <td>15%</td>
-                </tr>
-                <tr>
-                    <td>Final Assessment & Viva</td>
-                    <td>November 2026</td>
-                    <td>60%</td>
-                </tr>
-            </table>
+    <!-- Key Statistics Counter Banner (Slide 9 Visual Excellence) -->
+    <div class="stats-banner">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <div class="stat-val">4 Modules</div>
+                <div class="stat-label">Multi-Modal Pillars</div>
+                <div class="stat-subtext">Vision, NLP, Quality &amp; Climate</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-val">21 Species</div>
+                <div class="stat-label">Haldummulla Dataset</div>
+                <div class="stat-subtext">3,095 Expert-Validated Specimens</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-val">1,550+ Records</div>
+                <div class="stat-label">Grounded Knowledge Base</div>
+                <div class="stat-subtext">Ayurvedic Formulations &amp; Dosages</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-val">2026–2030</div>
+                <div class="stat-label">Prophet Projections</div>
+                <div class="stat-subtext">Habitat Suitability Climatic Models</div>
+            </div>
         </div>
-    </section>
+    </div>
 
-    <!-- Documents Section -->
-    <section id="documents" class="section bg-light">
-        <div class="content">
-            <h2>Documents</h2>
-            <ul class="doc-list">
-                <li><a href="#">📄 Project Charter (PDF)</a></li>
-                <li><a href="#">📄 Proposal Document (PDF)</a></li>
-                <li><a href="#">📄 Check List Documents (PDF)</a></li>
-                <li><a href="#">📄 Final Common Report (PDF)</a></li>
-            </ul>
-            <p><em>*Links will be updated upon final submission.</em></p>
-        </div>
-    </section>
+    <!-- Core Research Pillars (Slide 9: Organized & Clear Layout) -->
+    <section class="section bg-light" id="research-pillars">
+        <div class="content-wrapper">
+            <div class="section-header">
+                <span class="section-tag">Integrated Ecosystem</span>
+                <h2>Core Research Framework Components</h2>
+                <p>
+                    Bio-Heritage AI brings together four specialized research modules developed collaboratively by our
+                    four-member undergraduate research group.
+                </p>
+            </div>
 
-    <!-- Slides Section -->
-    <section id="slides" class="section">
-        <div class="content">
-            <h2>Presentations (Slides)</h2>
-            <ul class="doc-list">
-                <li><a href="#">📊 Proposal Presentation (PPTX)</a></li>
-                <li><a href="#">📊 Progress Presentation - 1 (PPTX)</a></li>
-                <li><a href="#">📊 Progress Presentation - 2 (Pending)</a></li>
-            </ul>
-        </div>
-    </section>
-
-    <!-- About Us Section -->
-    <section id="about" class="section bg-light">
-        <div class="content">
-            <h2>About Us</h2>
-            <p><strong>Supervisor:</strong> Ms. Thisara Shyamalee</p>
-            <div class="team-grid">
-                <div class="team-member">
-                    <h3>L.M.N.R. Ariyarathna</h3>
-                    <p>Component 1: Authentication Engine & OOD Detection</p>
+            <div class="pillars-grid">
+                <!-- Pillar 1 -->
+                <div class="pillar-card">
+                    <span class="pillar-badge">Component 01 • Vision &amp; OOD</span>
+                    <h3>Medicinal Plant Botanical Authentication</h3>
+                    <p>
+                        Deep transfer learning authentication engine (EfficientNetB0) detecting morphological
+                        look-alikes and commercial adulterants with Out-of-Distribution rejection and explicit Visha
+                        Haranaya toxicity alerts.
+                    </p>
+                    <div class="pillar-meta">Lead Researcher: Ariyarathna L.M.N.R. (IT22547774)</div>
                 </div>
-                <div class="team-member">
-                    <h3>Team Member 2</h3>
-                    <p>Component 2: Digital Herbarium (MongoDB)</p>
+
+                <!-- Pillar 2 -->
+                <div class="pillar-card">
+                    <span class="pillar-badge">Component 02 • RAG &amp; Safety NLP</span>
+                    <h3>Health-Context-Aware Herb Assistant</h3>
+                    <p>
+                        Source-grounded RAG assistant utilizing FAISS semantic search, SVM intent classification, Llama
+                        3.2, and SHAP-explained Random Forest contraindication risk scoring with proactive patient
+                        health questioning.
+                    </p>
+                    <div class="pillar-meta">Lead Researcher: Rajawardhana M.B.G.T.N.</div>
                 </div>
-                <div class="team-member">
-                    <h3>Team Member 3</h3>
-                    <p>Component 3: Batch Analytics & Task Queues</p>
+
+                <!-- Pillar 3 -->
+                <div class="pillar-card">
+                    <span class="pillar-badge">Component 03 • Phytopathology</span>
+                    <h3>Leaf Health &amp; AMS Quality Grading</h3>
+                    <p>
+                        Fine-tuned EfficientNetB4 convolutional neural network categorizing 5 pathological leaf states,
+                        computing an automated 4-tier Ayurvedic Medicinal Suitability (AMS) Quality Grade (A–D), and
+                        enforcing 30–45 day harvest withholding warnings.
+                    </p>
+                    <div class="pillar-meta">Lead Researcher: Darmasena M.S.T. (Sahan)</div>
+                </div>
+
+                <!-- Pillar 4 -->
+                <div class="pillar-card">
+                    <span class="pillar-badge">Component 04 • Time-Series &amp; GIS</span>
+                    <h3>Climate Forecasting &amp; Habitat Suitability</h3>
+                    <p>
+                        Predictive environmental model leveraging Facebook Prophet time-series models to forecast
+                        temperature and precipitation patterns across Sri Lanka up to 2030, projecting shifting
+                        geographic cultivation zones.
+                    </p>
+                    <div class="pillar-meta">Lead Researcher: Team Member 4</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Us Section -->
-    <section id="contact" class="section">
-        <div class="content">
-            <h2>Contact Us</h2>
-            <p>For any inquiries regarding the research, dataset, or implementation, please contact our team.</p>
-            <p><strong>Email:</strong> research.ayurveda@sliit.lk</p>
-            <p><strong>Phone:</strong> +94 11 234 5678</p>
+    <!-- ========================================================================
+         SECTION 2: DOMAIN (Slide 10: 6 Criteria in Pure HTML/CSS)
+         ======================================================================== -->
+    <section id="domain" class="section bg-white">
+        <div class="content-wrapper">
+            <div class="section-header">
+                <span class="section-tag">Academic Research Domain</span>
+                <h2>Domain Information &amp; Research Analysis</h2>
+                <p>
+                    Detailed findings gathered through comprehensive literature survey, domain gap analysis, and system
+                    engineering.
+                </p>
+            </div>
+
+            <!-- Domain Sub-Topic 1: Literature Survey (Slide 10 Criteria) -->
+            <div class="domain-subtopic-block" id="domain-lit-survey">
+                <div class="domain-subtopic-header">
+                    <span class="pillar-badge">Domain Criterion 01</span>
+                    <h3>📚 Literature Survey</h3>
+                </div>
+                <p class="lead">
+                    Traditional Sri Lankan medicine—encompassing <em>Deshiya Chikitsa</em> and classical
+                    Ayurveda—possesses documented histories spanning over three millennia. The purity of active
+                    botanical phytochemicals (such as alkaloids, flavonoids, tannins, and glycosides) is the primary
+                    determinant of therapeutic potency in Ayurvedic pharmacognosy.
+                </p>
+                <div class="domain-subgrid">
+                    <div class="domain-subcard">
+                        <h4>General Plant Identification Models</h4>
+                        <p>
+                            Platforms like PlantNet, iNaturalist, and Google Lens have attained commendable accuracy on
+                            broad European and North American floras. However, our survey reveals that these models
+                            perform poorly on endemic Sri Lankan taxa, lack fine-grained feature discriminators for
+                            close cultivars, and lack mechanisms to distinguish toxic look-alikes.
+                        </p>
+                    </div>
+                    <div class="domain-subcard">
+                        <h4>Medical Retrieval-Augmented Generation</h4>
+                        <p>
+                            Prior research demonstrates that off-the-shelf generative LLMs (GPT-4, Claude, LLaMA)
+                            hallucinate Ayurvedic herbal dosages at rates exceeding 32% when prompted with colloquial
+                            queries. Existing medical RAG applications focus on allopathic clinical notes and fail to
+                            incorporate traditional Ayurvedic doshic contraindications or drug-herb interactions.
+                        </p>
+                    </div>
+                    <div class="domain-subcard">
+                        <h4>Phytopathological Impact on Raw Materials</h4>
+                        <p>
+                            Plant pathology literature establishes that foliar pathogens (such as
+                            <em>Colletotrichum</em> causing Anthracnose, and <em>Xanthomonas</em> causing Bacterial Leaf
+                            Spot) synthesize carcinogenic mycotoxins and degrade active therapeutic compounds. No
+                            existing digital herbarium system currently evaluates leaf health prior to formulation
+                            clearance.
+                        </p>
+                    </div>
+                    <div class="domain-subcard">
+                        <h4>Climatic Habitat Vulnerability</h4>
+                        <p>
+                            IPCC climate assessments and the Department of Meteorology of Sri Lanka document changing
+                            rainfall regimes in the intermediate and dry agro-ecological zones. Cultivation habitats of
+                            vulnerable medicinal shrubs require proactive geographic modeling to safeguard raw botanical
+                            pipelines.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Domain Sub-Topic 2: Research Gap (Slide 10 Criteria) -->
+            <div class="domain-subtopic-block" id="domain-gap">
+                <div class="domain-subtopic-header">
+                    <span class="pillar-badge">Domain Criterion 02</span>
+                    <h3>🔍 Research Gap</h3>
+                </div>
+                <p class="lead">
+                    Through our systematic literature review and clinical interviews with Ayurvedic physicians at
+                    Gampaha Wickramarachchi Ayurveda University, four pivotal gaps in current systems were identified:
+                </p>
+                <div class="domain-subgrid">
+                    <div class="domain-subcard">
+                        <h4>Gap 1: Absence of OOD Rejection &amp; Adulterant Warnings</h4>
+                        <p>
+                            Standard computer vision models operate under a closed-world assumption: when presented with
+                            an unknown leaf or non-medicinal weed, they force a prediction into the highest-softmax
+                            class. They fail to trigger an "Unknown Specimen" rejection or highlight toxic look-alikes
+                            (e.g., confusing toxic <em>Datura metel</em> [Attana] with genuine medicinal cultivars).
+                        </p>
+                    </div>
+                    <div class="domain-subcard">
+                        <h4>Gap 2: Lack of Health-Context-Aware Clarification</h4>
+                        <p>
+                            Standard health chatbots answer dosage questions blindly without inquiring whether the user
+                            is pregnant, nursing, suffering from renal failure, or taking pharmaceutical anticoagulants.
+                            No system actively requests missing health context before querying Ayurvedic databases.
+                        </p>
+                    </div>
+                    <div class="domain-subcard">
+                        <h4>Gap 3: Missing Ayurvedic Quality Grading (AMS Standard)</h4>
+                        <p>
+                            Agricultural disease models output only a binary "disease name" without translating this
+                            prediction into an Ayurvedic manufacturing clearance. There is no automated framework
+                            connecting CNN classification confidence to Ayurvedic pharmaceutical standards (such as
+                            suitability for oral <em>Kashaya</em> vs. topical <em>Lepa</em> vs. strict rejection).
+                        </p>
+                    </div>
+                    <div class="domain-subcard">
+                        <h4>Gap 4: Absence of Agro-Climatic Habitat Projections</h4>
+                        <p>
+                            Plant systems treat habitat distribution as static historical points rather than dynamically
+                            shifting ranges under future climate scenarios up to 2030 in Sri Lanka's unique topography.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Domain Sub-Topic 3: Research Problem (Slide 10 Criteria) -->
+            <div class="domain-subtopic-block" id="domain-problem">
+                <div class="domain-subtopic-header">
+                    <span class="pillar-badge">Domain Criterion 03</span>
+                    <h3>⚠️ Research Problem</h3>
+                </div>
+                <p class="lead">
+                    In Sri Lanka's indigenous healthcare sector, the adulteration of rare medicinal plants, the harvest
+                    of pathologically contaminated leaves, and unverified herbal self-medication present severe clinical
+                    hazards, compounded by climate-induced habitat loss.
+                </p>
+                <div
+                    style="background: #fff1f2; border: 1px solid #fecdd3; border-left: 5px solid #e11d48; padding: 20px; border-radius: 8px;">
+                    <h4 style="color: #9f1239; margin-bottom: 8px;">Compounding Critical Hazards:</h4>
+                    <ul style="padding-left: 20px; color: #4c0519; font-size: 0.92rem; line-height: 1.7;">
+                        <li><strong>Accidental Botanical Toxicity:</strong> Herb gatherers unknowingly substituting
+                            toxic weeds for rare medicinal herbs due to extreme morphological similarities in vegetative
+                            states.</li>
+                        <li><strong>Pathological Formulation Degradation:</strong> Pharmaceutical processors extracting
+                            decoctions from blighted leaves containing fungal mycotoxins and diminished phytochemical
+                            yields.</li>
+                        <li><strong>Unsafe AI Medical Advice:</strong> Generic conversational AI models generating
+                            ungrounded, hallucinated dosages without verifying user medical conditions such as pregnancy
+                            or chronic disease.</li>
+                        <li><strong>Cultivation Insecurity:</strong> Lack of predictive environmental intelligence to
+                            guide conservationists on where medicinal plant species can be successfully cultivated over
+                            the next decade.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Domain Sub-Topic 4: Research Objectives (Slide 10 Criteria) -->
+            <div class="domain-subtopic-block" id="domain-objectives">
+                <div class="domain-subtopic-header">
+                    <span class="pillar-badge">Domain Criterion 04</span>
+                    <h3>🎯 Research Objectives</h3>
+                </div>
+                <p class="lead">
+                    <strong>Main Objective:</strong> To develop a cohesive, multi-modal artificial intelligence
+                    framework ("Bio-Heritage AI") to authenticate botanical genuineness, evaluate leaf pathological
+                    quality, dispense safe health-context-grounded Ayurvedic knowledge, and forecast regional
+                    cultivation habitats across Sri Lanka.
+                </p>
+                <div class="domain-subgrid">
+                    <div class="domain-subcard">
+                        <h4>Component 1: Botanical Authentication (Ariyarathna L.M.N.R.)</h4>
+                        <ul>
+                            <li>Collect and validate an expert-labeled image corpus of 21 medicinal plants (3,095
+                                images) at Haldummulla Medicinal Plant Garden.</li>
+                            <li>Fine-tune EfficientNetB0 architecture achieving >85% multi-class accuracy.</li>
+                            <li>Implement Out-of-Distribution (OOD) rejection for unknown non-medicinal weeds.</li>
+                            <li>Integrate explicit Visha Haranaya adulterant warnings and Grad-CAM visual heatmaps.</li>
+                        </ul>
+                    </div>
+                    <div class="domain-subcard">
+                        <h4>Component 2: Health-Context-Aware RAG (Rajawardhana M.B.G.T.N.)</h4>
+                        <ul>
+                            <li>Construct a structured knowledge base of 1,550 verified Sri Lankan medicinal herb
+                                records.</li>
+                            <li>Build a FAISS vector index with all-MiniLM-L6-v2 embeddings and SVM query intent
+                                classifier.</li>
+                            <li>Design a Health-Context Clarification Module that prompts for pregnancy, conditions, and
+                                dosage forms.</li>
+                            <li>Train a Random Forest contraindication classifier with SHAP-based feature
+                                explainability.</li>
+                        </ul>
+                    </div>
+                    <div class="domain-subcard">
+                        <h4>Component 3: Leaf Health &amp; AMS Quality Grading (Darmasena M.S.T.)</h4>
+                        <ul>
+                            <li>Fine-tune EfficientNetB4 for 5 pathological states: Healthy, Anthracnose, Bacterial Leaf
+                                Spot, Rot, and Rust.</li>
+                            <li>Achieve >95% test accuracy with low generalization gap.</li>
+                            <li>Formulate the 4-tier Ayurvedic Medicinal Suitability (AMS) Quality Grading standard
+                                (Grades A, B, C, D).</li>
+                            <li>Deliver bi-lingual (English/Sinhala) agricultural remediation with mandatory 30–45 day
+                                harvest withholding warnings.</li>
+                        </ul>
+                    </div>
+                    <div class="domain-subcard">
+                        <h4>Component 4: Climate Forecasting &amp; Habitat Suitability</h4>
+                        <ul>
+                            <li>Ingest historic climatic time-series data across Sri Lankan provincial agro-ecological
+                                zones.</li>
+                            <li>Train Facebook Prophet models to forecast precipitation and temperature anomalies
+                                through 2030.</li>
+                            <li>Couple climate forecasts with rule-based species habitat thresholds.</li>
+                            <li>Render interactive GIS geospatial suitability maps for indigenous species cultivation.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Domain Sub-Topic 5: Methodology (Slide 10 Criteria) -->
+            <div class="domain-subtopic-block" id="domain-methodology">
+                <div class="domain-subtopic-header">
+                    <span class="pillar-badge">Domain Criterion 05</span>
+                    <h3>⚙️ Methodology &amp; System Architecture</h3>
+                </div>
+                <p class="lead">
+                    The Bio-Heritage AI architecture employs a decoupled, multi-modal pipeline architecture. Data flows
+                    through specialized sensory intake pipelines into dedicated neural and statistical decision engines:
+                </p>
+
+                <div class="architecture-container">
+                    <h4 style="color: var(--primary-dark); margin-bottom: 14px;">Multi-Modal System Architecture
+                        Pipeline Diagram</h4>
+                    <div
+                        style="background: white; padding: 18px; border-radius: 12px; border: 1px solid #cbd5e1; overflow-x: auto;">
+                        <svg viewBox="0 0 950 420" width="100%" height="auto" class="architecture-diagram"
+                            style="min-width: 750px;">
+                            <defs>
+                                <linearGradient id="grad-p1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#0d5c46" />
+                                    <stop offset="100%" stop-color="#168063" />
+                                </linearGradient>
+                                <linearGradient id="grad-p2" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#1e3a8a" />
+                                    <stop offset="100%" stop-color="#3b82f6" />
+                                </linearGradient>
+                                <linearGradient id="grad-p3" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#0f172a" />
+                                    <stop offset="100%" stop-color="#1e293b" />
+                                </linearGradient>
+                                <linearGradient id="grad-p4" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#c5a880" />
+                                    <stop offset="100%" stop-color="#9e7f55" />
+                                </linearGradient>
+                            </defs>
+
+                            <!-- Ingestion Layer -->
+                            <rect x="20" y="30" width="170" height="360" rx="10" fill="#f8fafc" stroke="#cbd5e1"
+                                stroke-width="2" />
+                            <text x="105" y="60" text-anchor="middle" font-size="14" font-weight="bold"
+                                fill="#0f172a">USER / CLINICAL INPUT</text>
+
+                            <rect x="35" y="85" width="140" height="55" rx="6" fill="white" stroke="#94a3b8" />
+                            <text x="105" y="112" text-anchor="middle" font-size="11" font-weight="600"
+                                fill="#334155">Leaf / Plant Specimen</text>
+                            <text x="105" y="128" text-anchor="middle" font-size="9" fill="#64748b">(Mobile / Camera /
+                                Upload)</text>
+
+                            <rect x="35" y="160" width="140" height="55" rx="6" fill="white" stroke="#94a3b8" />
+                            <text x="105" y="187" text-anchor="middle" font-size="11" font-weight="600"
+                                fill="#334155">Natural Language Query</text>
+                            <text x="105" y="203" text-anchor="middle" font-size="9" fill="#64748b">(Dosage, Herb,
+                                Illness)</text>
+
+                            <rect x="35" y="235" width="140" height="55" rx="6" fill="white" stroke="#94a3b8" />
+                            <text x="105" y="262" text-anchor="middle" font-size="11" font-weight="600"
+                                fill="#334155">Leaf Disease Inspection</text>
+                            <text x="105" y="278" text-anchor="middle" font-size="9" fill="#64748b">(Harvest Raw
+                                Material)</text>
+
+                            <rect x="35" y="310" width="140" height="55" rx="6" fill="white" stroke="#94a3b8" />
+                            <text x="105" y="337" text-anchor="middle" font-size="11" font-weight="600"
+                                fill="#334155">Geographic Location</text>
+                            <text x="105" y="353" text-anchor="middle" font-size="9" fill="#64748b">(District /
+                                Agro-Zone)</text>
+
+                            <!-- Arrows -->
+                            <path d="M 175 112 L 230 112" stroke="#0d5c46" stroke-width="2" />
+                            <path d="M 175 187 L 230 187" stroke="#0d5c46" stroke-width="2" />
+                            <path d="M 175 262 L 230 262" stroke="#0d5c46" stroke-width="2" />
+                            <path d="M 175 337 L 230 337" stroke="#0d5c46" stroke-width="2" />
+
+                            <!-- Engines Layer -->
+                            <rect x="230" y="30" width="460" height="360" rx="10" fill="#f1f8f5" stroke="#a7f3d0"
+                                stroke-width="2" />
+                            <text x="460" y="60" text-anchor="middle" font-size="14" font-weight="bold"
+                                fill="#064e3b">SPECIALIZED AI ENGINES &amp; MICROSERVICES</text>
+
+                            <rect x="245" y="80" width="430" height="65" rx="8" fill="url(#grad-p1)" />
+                            <text x="260" y="105" font-size="12" font-weight="bold" fill="white">M1: Botanical
+                                Authentication &amp; OOD Rejector</text>
+                            <text x="260" y="125" font-size="10" fill="#d1fae5">EfficientNetB0 (86.9% Acc) • 21
+                                Haldummulla Species • Visha Haranaya Toxicity Alert</text>
+
+                            <rect x="245" y="155" width="430" height="65" rx="8" fill="url(#grad-p2)" />
+                            <text x="260" y="180" font-size="12" font-weight="bold" fill="white">M2:
+                                Health-Context-Aware RAG Assistant</text>
+                            <text x="260" y="200" font-size="10" fill="#dbeafe">FAISS Semantic Index • 1,550 Herb
+                                Records • SVM Intent • Random Forest Risk + SHAP</text>
+
+                            <rect x="245" y="230" width="430" height="65" rx="8" fill="url(#grad-p3)" />
+                            <text x="260" y="255" font-size="12" font-weight="bold" fill="white">M3: EfficientNetB4 Leaf
+                                Pathology &amp; AMS Grading</text>
+                            <text x="260" y="275" font-size="10" fill="#cbd5e1">5 Disease States (97.4% Acc) • AMS
+                                Grades A-D • 30-45 Day Withholding Buffer Alert</text>
+
+                            <rect x="245" y="305" width="430" height="65" rx="8" fill="url(#grad-p4)" />
+                            <text x="260" y="330" font-size="12" font-weight="bold" fill="white">M4: Prophet Climate
+                                Forecasting &amp; Habitat Mapping</text>
+                            <text x="260" y="350" font-size="10" fill="#fffbeb">Temperature &amp; Precipitation
+                                Time-Series Projections 2026-2030 • Habitat Suitability</text>
+
+                            <!-- Arrows -->
+                            <path d="M 675 112 L 730 112" stroke="#0d5c46" stroke-width="2" />
+                            <path d="M 675 187 L 730 187" stroke="#0d5c46" stroke-width="2" />
+                            <path d="M 675 262 L 730 262" stroke="#0d5c46" stroke-width="2" />
+                            <path d="M 675 337 L 730 337" stroke="#0d5c46" stroke-width="2" />
+
+                            <!-- Verdicts Layer -->
+                            <rect x="730" y="30" width="200" height="360" rx="10" fill="#f8fafc" stroke="#cbd5e1"
+                                stroke-width="2" />
+                            <text x="830" y="60" text-anchor="middle" font-size="14" font-weight="bold"
+                                fill="#0f172a">CLINICAL VERDICTS</text>
+
+                            <rect x="745" y="85" width="170" height="55" rx="6" fill="#ecfdf5" stroke="#10b981" />
+                            <text x="830" y="108" text-anchor="middle" font-size="10" font-weight="bold"
+                                fill="#065f46">Genuine Specimen Validated</text>
+                            <text x="830" y="125" text-anchor="middle" font-size="9" fill="#047857">Adulterant Alert
+                                Triggered</text>
+
+                            <rect x="745" y="160" width="170" height="55" rx="6" fill="#eff6ff" stroke="#3b82f6" />
+                            <text x="830" y="183" text-anchor="middle" font-size="10" font-weight="bold"
+                                fill="#1e40af">Grounded Dosage Advice</text>
+                            <text x="830" y="200" text-anchor="middle" font-size="9" fill="#1d4ed8">Safety Note &amp;
+                                SHAP Rationale</text>
+
+                            <rect x="745" y="235" width="170" height="55" rx="6" fill="#fef2f2" stroke="#ef4444" />
+                            <text x="830" y="258" text-anchor="middle" font-size="10" font-weight="bold"
+                                fill="#991b1b">AMS Quality Grade (A-D)</text>
+                            <text x="830" y="275" text-anchor="middle" font-size="9" fill="#b91c1c">Organic &amp;
+                                Chemical Advice</text>
+
+                            <rect x="745" y="310" width="170" height="55" rx="6" fill="#fffbeb" stroke="#f59e0b" />
+                            <text x="830" y="333" text-anchor="middle" font-size="10" font-weight="bold"
+                                fill="#92400e">GIS Habitat Map</text>
+                            <text x="830" y="350" text-anchor="middle" font-size="9" fill="#b45309">2026-2030
+                                Suitability Zone</text>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Domain Sub-Topic 6: Technologies Used (Slide 10 Criteria) -->
+            <div class="domain-subtopic-block" id="domain-tech">
+                <div class="domain-subtopic-header">
+                    <span class="pillar-badge">Domain Criterion 06</span>
+                    <h3>💻 Technologies Used</h3>
+                </div>
+                <p class="lead">
+                    Bio-Heritage AI leverages an industry-standard modern technology stack optimized for deep learning
+                    reproducibility, explainable AI, and cross-platform deployment:
+                </p>
+                <div class="tech-grid">
+                    <div class="tech-card">
+                        <div class="tech-icon">🧠</div>
+                        <div class="tech-info">
+                            <h5>EfficientNetB0 &amp; B4</h5>
+                            <p>Compound-scaled convolutional neural backbones fine-tuned on botanical and pathological
+                                datasets with Keras 3 multi-backend.</p>
+                        </div>
+                    </div>
+                    <div class="tech-card">
+                        <div class="tech-icon">🔍</div>
+                        <div class="tech-info">
+                            <h5>FAISS Vector Index</h5>
+                            <p>Facebook AI Similarity Search engine indexing all-MiniLM-L6-v2 embeddings for high-speed
+                                nearest-neighbor retrieval.</p>
+                        </div>
+                    </div>
+                    <div class="tech-card">
+                        <div class="tech-icon">⚡</div>
+                        <div class="tech-info">
+                            <h5>Linear SVM &amp; TF-IDF</h5>
+                            <p>High-precision query intent classification classifying Ayurvedic queries into dosage,
+                                property, disease, and contraindication paths.</p>
+                        </div>
+                    </div>
+                    <div class="tech-card">
+                        <div class="tech-icon">🛡️</div>
+                        <div class="tech-info">
+                            <h5>Random Forest &amp; SHAP</h5>
+                            <p>Supervised contraindication risk classifier with TreeSHAP explainability illustrating
+                                patient condition feature importances.</p>
+                        </div>
+                    </div>
+                    <div class="tech-card">
+                        <div class="tech-icon">📈</div>
+                        <div class="tech-info">
+                            <h5>Facebook Prophet</h5>
+                            <p>Additive time-series regression forecasting multi-year temperature and precipitation
+                                dynamics across Sri Lankan agro-zones.</p>
+                        </div>
+                    </div>
+                    <div class="tech-card">
+                        <div class="tech-icon">🚀</div>
+                        <div class="tech-info">
+                            <h5>FastAPI &amp; Uvicorn</h5>
+                            <p>High-performance asynchronous Python backend exposing RESTful prediction endpoints with
+                                Swagger OpenAPI documentation.</p>
+                        </div>
+                    </div>
+                    <div class="tech-card">
+                        <div class="tech-icon">🌐</div>
+                        <div class="tech-info">
+                            <h5>HTML5 &amp; CSS3</h5>
+                            <p>Fully compliant with W3C web standards, modern glassmorphism styling, and responsive
+                                layout without JavaScript dependencies.</p>
+                        </div>
+                    </div>
+                    <div class="tech-card">
+                        <div class="tech-icon">🦙</div>
+                        <div class="tech-info">
+                            <h5>Ollama &amp; Llama 3.2</h5>
+                            <p>Local LLM execution framework generating strictly grounded natural language answers from
+                                retrieved Ayurvedic knowledge chunks.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
 
+    <!-- ========================================================================
+         SECTION 3: MILESTONES (Slide 11: Describe all assessments, Date, Marks, Drop-down Menu)
+         ======================================================================== -->
+    <section id="milestones" class="section bg-light">
+        <div class="content-wrapper">
+            <div class="section-header">
+                <span class="section-tag">Academic Timeline &amp; Assessments</span>
+                <h2>Project Milestones &amp; Evaluation</h2>
+                <p>
+                    All degree project assessments, timelines, allocated marks, and deliverables aligned with the SLIIT
+                    Faculty of Computing CDAP curriculum.
+                </p>
+            </div>
+
+            <!-- Slide 11 Explicit Requirement: "When design, use a drop-down menu for user to choose."
+                 Pure HTML/CSS Drop-Down Menu Implementation -->
+            <div id="milestones-dropdown-menu">
+                <details class="html-dropdown-box" open>
+                    <summary>🎯 Choose Assessment Milestone from Drop-Down Menu (Click to Expand / Select)</summary>
+                    <div class="dropdown-jump-grid">
+                        <a href="#m-proposal">1. Project Proposal (10% Marks)</a>
+                        <a href="#m-pp1">2. Progress Presentation-1 (15% Marks)</a>
+                        <a href="#m-pp2">3. Progress Presentation-2 (15% Marks)</a>
+                        <a href="#m-final">4. Final Assessment (60% Marks)</a>
+                        <a href="#m-viva">5. Viva Voce Defense (Inclusive in 60%)</a>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Milestone 1: Project Proposal (Slide 11 Criteria) -->
+            <div class="milestone-item-card" id="m-proposal">
+                <div class="milestone-item-header">
+                    <div class="milestone-title-group">
+                        <span class="milestone-phase">Assessment Phase 01</span>
+                        <h3>1. Project Proposal</h3>
+                    </div>
+                    <div class="milestone-metric-pills">
+                        <span class="metric-pill marks">📊 Marks Allocated: 10% (10 Marks)</span>
+                        <span class="metric-pill date">📅 Date: February 2026</span>
+                        <span class="metric-pill status-completed">Status: Completed</span>
+                    </div>
+                </div>
+                <div class="milestone-item-body">
+                    <div>
+                        <h4>Assessment Scope &amp; Objectives</h4>
+                        <p>
+                            Initial defense and proposal document outlining the research motivation, literature review,
+                            problem formulation, and feasibility analysis of the Bio-Heritage AI framework. Defines
+                            individual member research scopes across Botanical Authentication, RAG Herb Assistant,
+                            Phytopathological Leaf Health Detection, and Climate Forecasting.
+                        </p>
+                        <div
+                            style="background: #f8fafc; border: 1px solid #e2e8f0; padding: 10px 14px; border-radius: 6px;">
+                            <strong style="color: var(--primary); font-size: 0.84rem;">Evaluation Rubric:</strong>
+                            <p style="font-size: 0.8rem; margin: 3px 0 0 0; color: #475569;">Literature mastery (25%),
+                                Problem articulation &amp; Novelty (30%), Methodology design (25%), Oral defense (20%).
+                            </p>
+                        </div>
+                    </div>
+                    <div>
+                        <h4>Mandatory Deliverables</h4>
+                        <ul class="milestone-deliverables-list">
+                            <li>✓ Comprehensive Project Proposal Document</li>
+                            <li>✓ 15-Minute Oral Presentation &amp; Slide Deck — <a
+                                    href="https://docs.google.com/presentation/d/13A9vsMdy3A7aezE5V8LI2mc5y5j6D934/edit?usp=drive_link&ouid=106394585571580795995&rtpof=true&sd=true"
+                                    target="_blank" rel="noopener noreferrer"
+                                    style="color: var(--primary); font-weight: 700; text-decoration: underline;">[View
+                                    Proposal Slides ↗]</a></li>
+                            <li>✓ Preliminary Feasibility Matrix &amp; Gantt Schedule</li>
+                            <li>✓ Literature Survey Summary &amp; Research Gap Formulation</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Milestone 2: Progress Presentation-1 (Slide 11 Criteria) -->
+            <div class="milestone-item-card" id="m-pp1">
+                <div class="milestone-item-header">
+                    <div class="milestone-title-group">
+                        <span class="milestone-phase">Assessment Phase 02</span>
+                        <h3>2. Progress Presentation - 1</h3>
+                    </div>
+                    <div class="milestone-metric-pills">
+                        <span class="metric-pill marks">📊 Marks Allocated: 15% (15 Marks)</span>
+                        <span class="metric-pill date">📅 Date: May 2026</span>
+                        <span class="metric-pill status-completed">Status: Completed</span>
+                    </div>
+                </div>
+                <div class="milestone-item-body">
+                    <div>
+                        <h4>Assessment Scope &amp; Objectives</h4>
+                        <p>
+                            Evaluation of foundational model architecture, dataset acquisition, and exploratory data
+                            analysis. Member 1 completed Haldummulla botanical garden dataset validation; Member 2
+                            finalized Ayurvedic herb vector chunking &amp; FAISS semantic embedding; Member 3 trained
+                            baseline EfficientNet models; Member 4 completed historic climate data ingestion.
+                        </p>
+                        <div
+                            style="background: #f8fafc; border: 1px solid #e2e8f0; padding: 10px 14px; border-radius: 6px;">
+                            <strong style="color: var(--primary); font-size: 0.84rem;">Evaluation Rubric:</strong>
+                            <p style="font-size: 0.8rem; margin: 3px 0 0 0; color: #475569;">Data pipeline validity
+                                (30%), Baseline model results (30%), System integration progress (20%), Individual
+                                progress (20%).</p>
+                        </div>
+                    </div>
+                    <div>
+                        <h4>Mandatory Deliverables</h4>
+                        <ul class="milestone-deliverables-list">
+                            <li>✓ Progress Presentation - 1 Slide Deck — <a
+                                    href="https://docs.google.com/presentation/d/1XiCf0UOYcLQm_sCHD4PnYTWG4c3VxBnN/edit?usp=drive_link&ouid=106394585571580795995&rtpof=true&sd=true"
+                                    target="_blank" rel="noopener noreferrer"
+                                    style="color: var(--primary); font-weight: 700; text-decoration: underline;">[View
+                                    PP-1 Slides ↗]</a></li>
+                            <li>✓ EDA &amp; Preprocessing Report with Class Distribution Charts</li>
+                            <li>✓ Prototype System Architecture &amp; Interface Wireframes</li>
+                            <li>✓ Individual Log Books &amp; Contribution Verification</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Milestone 3: Progress Presentation-2 (Slide 11 Criteria) -->
+            <div class="milestone-item-card" id="m-pp2">
+                <div class="milestone-item-header">
+                    <div class="milestone-title-group">
+                        <span class="milestone-phase">Assessment Phase 03</span>
+                        <h3>3. Progress Presentation - 2</h3>
+                    </div>
+                    <div class="milestone-metric-pills">
+                        <span class="metric-pill marks">📊 Marks Allocated: 15% (15 Marks)</span>
+                        <span class="metric-pill date">📅 Date: August 2026</span>
+                        <span class="metric-pill status-completed">Status: Completed</span>
+                    </div>
+                </div>
+                <div class="milestone-item-body">
+                    <div>
+                        <h4>Assessment Scope &amp; Objectives</h4>
+                        <p>
+                            Mid-term milestone demonstrating end-to-end integration of all microservices into the core
+                            gateway. Validates Member 1 Out-of-Distribution (OOD) rejection, Member 2
+                            Health-Context-Aware clarification logic and SHAP explainability, Member 3 AMS Quality
+                            Grading Algorithm (Grades A-D) and Withholding Period protocols, and Member 4 Prophet
+                            time-series predictions.
+                        </p>
+                        <div
+                            style="background: #f8fafc; border: 1px solid #e2e8f0; padding: 10px 14px; border-radius: 6px;">
+                            <strong style="color: var(--primary); font-size: 0.84rem;">Evaluation Rubric:</strong>
+                            <p style="font-size: 0.8rem; margin: 3px 0 0 0; color: #475569;">Integration completeness
+                                (35%), Accuracy &amp; Benchmarking (30%), Safety logic (20%), Live Demo (15%).</p>
+                        </div>
+                    </div>
+                    <div>
+                        <h4>Mandatory Deliverables</h4>
+                        <ul class="milestone-deliverables-list">
+                            <li>✓ Progress Presentation - 2 Slide Deck &amp; Live System Demo — <a
+                                    href="https://docs.google.com/presentation/d/1WK0vMKrljlCqKbwVigv422V5zjq6ncGs/edit?usp=drive_link&ouid=106394585571580795995&rtpof=true&sd=true"
+                                    target="_blank" rel="noopener noreferrer"
+                                    style="color: var(--primary); font-weight: 700; text-decoration: underline;">[View
+                                    PP-2 Slides ↗]</a></li>
+                            <li>✓ Interim Research Report &amp; Evaluation Benchmark Tables</li>
+                            <li>✓ REST API Integration Verification via Swagger UI</li>
+                            <li>✓ User Evaluation &amp; Usability Testing Feedback Sheets</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Milestone 4: Final Assessment (Slide 11 Criteria) -->
+            <div class="milestone-item-card" id="m-final">
+                <div class="milestone-item-header">
+                    <div class="milestone-title-group">
+                        <span class="milestone-phase">Assessment Phase 04</span>
+                        <h3>4. Final Assessment</h3>
+                    </div>
+                    <div class="milestone-metric-pills">
+                        <span class="metric-pill marks">📊 Marks Allocated: 60% (60 Marks)</span>
+                        <span class="metric-pill date">📅 Date: November 2026</span>
+                        <span class="metric-pill status-upcoming">Status: Upcoming</span>
+                    </div>
+                </div>
+                <div class="milestone-item-body">
+                    <div>
+                        <h4>Assessment Scope &amp; Objectives</h4>
+                        <p>
+                            Comprehensive capstone defense of the Bio-Heritage AI ecosystem. Includes individual thesis
+                            documents, common final research document, live end-to-end system defense, code inspection,
+                            and viva voce evaluation by internal and external academic examiners.
+                        </p>
+                        <div
+                            style="background: #f8fafc; border: 1px solid #e2e8f0; padding: 10px 14px; border-radius: 6px;">
+                            <strong style="color: var(--primary); font-size: 0.84rem;">Evaluation Rubric:</strong>
+                            <p style="font-size: 0.8rem; margin: 3px 0 0 0; color: #475569;">Research rigor &amp;
+                                contribution (30%), Software implementation (25%), Component depth (25%), Thesis quality
+                                (20%).</p>
+                        </div>
+                    </div>
+                    <div>
+                        <h4>Mandatory Deliverables</h4>
+                        <ul class="milestone-deliverables-list">
+                            <li>✓ Final Main Research Report (Common Project Document)</li>
+                            <li>✓ 4 Individual Component Research Theses</li>
+                            <li>✓ Final Presentation Slide Deck (Comprehensive Capstone)</li>
+                            <li>✓ Complete Production Codebase, Models &amp; Live Deployment</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Milestone 5: Viva Voce (Slide 11 Criteria) -->
+            <div class="milestone-item-card" id="m-viva">
+                <div class="milestone-item-header">
+                    <div class="milestone-title-group">
+                        <span class="milestone-phase">Individual Defense</span>
+                        <h3>5. Viva Voce Examination</h3>
+                    </div>
+                    <div class="milestone-metric-pills">
+                        <span class="metric-pill marks">📊 Marks Allocated: Part of Final 60%</span>
+                        <span class="metric-pill date">📅 Date: November 2026</span>
+                        <span class="metric-pill status-upcoming">Status: Upcoming</span>
+                    </div>
+                </div>
+                <div class="milestone-item-body">
+                    <div>
+                        <h4>Assessment Scope &amp; Objectives</h4>
+                        <p>
+                            Rigorous individual oral examination by panel experts probing the mathematical foundation,
+                            algorithmic rationale, architectural decisions, dataset hygiene, and individual
+                            contributions of each researcher.
+                        </p>
+                        <div
+                            style="background: #f8fafc; border: 1px solid #e2e8f0; padding: 10px 14px; border-radius: 6px;">
+                            <strong style="color: var(--primary); font-size: 0.84rem;">Evaluation Rubric:</strong>
+                            <p style="font-size: 0.8rem; margin: 3px 0 0 0; color: #475569;">Theoretical depth (35%),
+                                Code mastery &amp; individual contribution (35%), Domain justification (30%).</p>
+                        </div>
+                    </div>
+                    <div>
+                        <h4>Mandatory Deliverables</h4>
+                        <ul class="milestone-deliverables-list">
+                            <li>✓ Individual Component Code Walkthrough</li>
+                            <li>✓ Live Failure Mode Testing &amp; Adversarial Input Demonstration</li>
+                            <li>✓ Pharmacognosy &amp; Ayurveda Domain Justification Defense</li>
+                            <li>✓ Peer-Review &amp; Individual Contribution Audit</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Complete Milestone Summary Comparison Table (Slide 11 Criteria) -->
+            <div class="milestones-table-card">
+                <div class="table-header-title">
+                    <h4>Comprehensive CDAP Assessment Marks Allocation Matrix</h4>
+                    <span style="font-size: 0.82rem; font-weight: 700; color: var(--primary);">Total Marks: 100%</span>
+                </div>
+                <div style="overflow-x: auto;">
+                    <table class="milestones-table">
+                        <thead>
+                            <tr>
+                                <th>Assessment Milestone</th>
+                                <th>Target Date</th>
+                                <th>Weightage</th>
+                                <th>Key Deliverables</th>
+                                <th>Evaluation Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Project Proposal</strong></td>
+                                <td>February 2026</td>
+                                <td><strong>10%</strong></td>
+                                <td>Proposal Document, Research Charter, Oral Defense Slides</td>
+                                <td><span class="badge-status completed">Completed</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Progress Presentation - 1</strong></td>
+                                <td>May 2026</td>
+                                <td><strong>15%</strong></td>
+                                <td>EDA Report, Haldummulla Dataset Validation, Baseline CNN &amp; Embeddings</td>
+                                <td><span class="badge-status completed">Completed</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Progress Presentation - 2</strong></td>
+                                <td>August 2026</td>
+                                <td><strong>15%</strong></td>
+                                <td>Live Integration Demo, AMS Quality Grading Engine, SHAP Explainability</td>
+                                <td><span class="badge-status completed">Completed</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Final Assessment</strong></td>
+                                <td>November 2026</td>
+                                <td><strong>60%</strong> (Core)</td>
+                                <td>Final Main Report, 4 Individual Theses, Production Deployment</td>
+                                <td><span class="badge-status upcoming">Scheduled (Nov 2026)</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Viva Voce Examination</strong></td>
+                                <td>November 2026</td>
+                                <td>(Part of Final)</td>
+                                <td>Individual Code Defense, Pharmacognosy Domain Audit, Stress Testing</td>
+                                <td><span class="badge-status upcoming">Scheduled (Nov 2026)</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================================================
+         SECTION 4: DOCUMENTS (Slide 12: Produced & Pending Documents with Links)
+         ======================================================================== -->
+    <section id="documents" class="section bg-white">
+        <div class="content-wrapper">
+            <div class="section-header">
+                <span class="section-tag">Project Documentation Repository</span>
+                <h2>Research Documents &amp; Reports</h2>
+                <p>
+                    Listing all research documentation produced and those currently pending submission, available for
+                    examiner and peer review.
+                </p>
+            </div>
+
+            <div class="docs-grid">
+                <!-- Doc 1: Project Proposal - Darmasena M.S.T. (Sahan) -->
+                <div class="doc-card">
+                    <div class="doc-type-icon available">📄</div>
+                    <span class="pillar-badge">Proposal Document • Member 3</span>
+                    <h3>Proposal: Darmasena M.S.T.</h3>
+                    <p>
+                        Research proposal on "Medicinal Leaf Pathology Detection &amp; Ayurvedic Medicinal Suitability
+                        (AMS) Quality Grading System using EfficientNetB4".
+                    </p>
+                    <div class="doc-meta">
+                        <span>Lead: Sahan Darmasena</span>
+                        <span style="color: var(--primary); font-weight: 700;">Status: Approved</span>
+                    </div>
+                    <div class="doc-actions">
+                        <a href="https://drive.google.com/file/d/1Tx71S1VvhyT-N7OwIEvBqg0AsIvtR5GF/view?usp=drive_link"
+                            target="_blank" rel="noopener noreferrer" class="btn-doc-view">👁️ View</a>
+                        <a href="https://drive.google.com/uc?export=download&id=1Tx71S1VvhyT-N7OwIEvBqg0AsIvtR5GF"
+                            target="_blank" rel="noopener noreferrer" class="btn-doc-download">📥 Download</a>
+                    </div>
+                </div>
+
+                <!-- Doc 2: Project Proposal - Rajawardhana M.B.G.T.N. -->
+                <div class="doc-card">
+                    <div class="doc-type-icon available">📄</div>
+                    <span class="pillar-badge">Proposal Document • Member 2</span>
+                    <h3>Proposal: Rajawardhana M.B.G.T.N.</h3>
+                    <p>
+                        Research proposal on "Health-Context-Aware RAG and Explainable ML for Safe Sri Lankan Indigenous
+                        Herb Information Retrieval".
+                    </p>
+                    <div class="doc-meta">
+                        <span>Lead: Thanuja Rajawardhana</span>
+                        <span style="color: var(--primary); font-weight: 700;">Status: Approved</span>
+                    </div>
+                    <div class="doc-actions">
+                        <a href="https://drive.google.com/file/d/1R7FC-FyBmMgbsrG4k2d3apDXLgvSJmXa/view?usp=drive_link"
+                            target="_blank" rel="noopener noreferrer" class="btn-doc-view">👁️ View</a>
+                        <a href="https://drive.google.com/uc?export=download&id=1R7FC-FyBmMgbsrG4k2d3apDXLgvSJmXa"
+                            target="_blank" rel="noopener noreferrer" class="btn-doc-download">📥 Download</a>
+                    </div>
+                </div>
+
+                <!-- Doc 3: Project Proposal - Wickramarachchi -->
+                <div class="doc-card">
+                    <div class="doc-type-icon available">📄</div>
+                    <span class="pillar-badge">Proposal Document • Member 4</span>
+                    <h3>Proposal: Wickramarachchi</h3>
+                    <p>
+                        Research proposal on "Medicinal Plant Climate Forecasting &amp; Regional Habitat Suitability
+                        Prediction using Facebook Prophet Models".
+                    </p>
+                    <div class="doc-meta">
+                        <span>Lead: Wickramarachchi</span>
+                        <span style="color: var(--primary); font-weight: 700;">Status: Approved</span>
+                    </div>
+                    <div class="doc-actions">
+                        <a href="https://drive.google.com/file/d/15EjdZ2Z70zgb1M6yVJH0rnHPoFe2Mx5n/view?usp=drive_link"
+                            target="_blank" rel="noopener noreferrer" class="btn-doc-view">👁️ View</a>
+                        <a href="https://drive.google.com/uc?export=download&id=15EjdZ2Z70zgb1M6yVJH0rnHPoFe2Mx5n"
+                            target="_blank" rel="noopener noreferrer" class="btn-doc-download">📥 Download</a>
+                    </div>
+                </div>
+
+                <!-- Doc 4: Project Proposal - Ariyarathna L.M.N.R. -->
+                <div class="doc-card">
+                    <div class="doc-type-icon available">📄</div>
+                    <span class="pillar-badge">Proposal Document • Member 1</span>
+                    <h3>Proposal: Ariyarathna L.M.N.R.</h3>
+                    <p>
+                        Research proposal on "Medicinal Plant Botanical Authentication &amp; Out-of-Distribution
+                        Adulterant Detection using Deep Transfer Learning".
+                    </p>
+                    <div class="doc-meta">
+                        <span>Lead: Nisansala Ariyarathna</span>
+                        <span style="color: var(--primary); font-weight: 700;">Status: Approved</span>
+                    </div>
+                    <div class="doc-actions">
+                        <a href="https://drive.google.com/file/d/1osM8vDXoEgIj5vZVQqNkw-hQwskls2rU/view?usp=drive_link"
+                            target="_blank" rel="noopener noreferrer" class="btn-doc-view">👁️ View</a>
+                        <a href="https://drive.google.com/uc?export=download&id=1osM8vDXoEgIj5vZVQqNkw-hQwskls2rU"
+                            target="_blank" rel="noopener noreferrer" class="btn-doc-download">📥 Download</a>
+                    </div>
+                </div>
+
+                <!-- Doc 5: Project Charter (Slide 12: Project Charter - one doc) -->
+                <div class="doc-card">
+                    <div class="doc-type-icon available">📋</div>
+                    <span class="pillar-badge">Produced • One Doc</span>
+                    <h3>Project Charter</h3>
+                    <p>
+                        Formal charter document establishing project governance, timeline milestones, resource
+                        allocation, and responsibilities for Group R26J-IT-020.
+                    </p>
+                    <div class="doc-meta">
+                        <span>Size: 1.4 MB (PDF)</span>
+                        <span style="color: var(--primary); font-weight: 700;">Status: Approved</span>
+                    </div>
+                    <div class="doc-actions">
+                        <a href="#documents" class="btn-doc-view">👁️ View Details</a>
+                        <a href="#documents" class="btn-doc-download">📥 Download PDF</a>
+                    </div>
+                </div>
+
+                <!-- Doc 6: Check List Documents (Slide 12: Check List documents) -->
+                <div class="doc-card">
+                    <div class="doc-type-icon available">📋</div>
+                    <span class="pillar-badge">Produced • Checklist</span>
+                    <h3>Check List Documents</h3>
+                    <p>
+                        Audited checklists verifying adherence to SLIIT Faculty of Computing guidelines, research
+                        integrity standards, and dataset licensing compliance.
+                    </p>
+                    <div class="doc-meta">
+                        <span>Size: 850 KB (PDF)</span>
+                        <span style="color: var(--primary); font-weight: 700;">Status: Verified</span>
+                    </div>
+                    <div class="doc-actions">
+                        <a href="#documents" class="btn-doc-view">👁️ View Details</a>
+                        <a href="#documents" class="btn-doc-download">📥 Download PDF</a>
+                    </div>
+                </div>
+
+                <!-- Doc 7: Final Main Document (Slide 12: Final Document - 4 docs with the main etc.) -->
+                <div class="doc-card">
+                    <div class="doc-type-icon">📑</div>
+                    <span class="pillar-badge" style="background: #fef3c7; color: #b45309;">Core Thesis • Main
+                        Doc</span>
+                    <h3>Final Main Common Report</h3>
+                    <p>
+                        Unified capstone research dissertation synthesizing findings, cross-component API architecture,
+                        benchmark matrices, and clinical evaluations.
+                    </p>
+                    <div class="doc-meta">
+                        <span>Target: Nov 2026</span>
+                        <span style="color: #b45309; font-weight: 700;">Status: In Progress</span>
+                    </div>
+                    <div class="doc-actions">
+                        <span class="btn-doc-pending">⏳ Pending Final Submission (Nov 2026)</span>
+                    </div>
+                </div>
+
+                <!-- Doc 8: Final Individual Theses (4 docs) -->
+                <div class="doc-card">
+                    <div class="doc-type-icon">📚</div>
+                    <span class="pillar-badge" style="background: #fef3c7; color: #b45309;">Individual Theses • 4
+                        Docs</span>
+                    <h3>Final Individual Dissertations (4 Docs)</h3>
+                    <p>
+                        Four comprehensive individual research dissertations corresponding to Component 1, Component 2,
+                        Component 3, and Component 4.
+                    </p>
+                    <div class="doc-meta">
+                        <span>4 Sub-Reports</span>
+                        <span style="color: #b45309; font-weight: 700;">Status: In Progress</span>
+                    </div>
+                    <div class="doc-actions">
+                        <span class="btn-doc-pending">⏳ Pending Final Submission (Nov 2026)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================================================
+         SECTION 5: PRESENTATIONS (SLIDES) (Slide 13: Past Presentations & Future Provisions)
+         ======================================================================== -->
+    <section id="slides" class="section bg-light">
+        <div class="content-wrapper">
+            <div class="section-header">
+                <span class="section-tag">Academic Presentations</span>
+                <h2>Presentation Slide Decks</h2>
+                <p>
+                    Access presentation slide decks evaluated during oral assessments, with active provisions for
+                    upcoming capstone defenses.
+                </p>
+            </div>
+
+            <div class="slides-grid">
+                <!-- Slide 1: Proposal Presentation (Slide 13 Criteria) -->
+                <div class="slide-card">
+                    <div class="slide-deck-icon">📊</div>
+                    <span class="pillar-badge">Phase 01 Assessment</span>
+                    <h3>Proposal Presentation</h3>
+                    <p>
+                        Oral defense slides presenting project motivation, research gap analysis, mathematical
+                        architecture proposals, and timeline execution schedules.
+                    </p>
+                    <div class="slide-meta">
+                        <span>Google Slides Deck • Feb 2026</span>
+                        <span style="color: var(--primary); font-weight: 700;">Completed</span>
+                    </div>
+                    <div class="doc-actions">
+                        <a href="https://docs.google.com/presentation/d/13A9vsMdy3A7aezE5V8LI2mc5y5j6D934/edit?usp=drive_link&ouid=106394585571580795995&rtpof=true&sd=true"
+                            target="_blank" rel="noopener noreferrer" class="btn-doc-view">👁️ View Slides</a>
+                        <a href="https://docs.google.com/presentation/d/13A9vsMdy3A7aezE5V8LI2mc5y5j6D934/export/pptx"
+                            target="_blank" rel="noopener noreferrer" class="btn-doc-download">📥 Download PPTX</a>
+                    </div>
+                </div>
+
+                <!-- Slide 2: Progress Presentation-1 (Slide 13 Criteria) -->
+                <div class="slide-card">
+                    <div class="slide-deck-icon">📈</div>
+                    <span class="pillar-badge">Phase 02 Assessment</span>
+                    <h3>Progress Presentation - 1</h3>
+                    <p>
+                        Deck covering Haldummulla field data acquisition, 21-class distribution analytics, FAISS
+                        semantic index creation, and baseline CNN training curves.
+                    </p>
+                    <div class="slide-meta">
+                        <span>Google Slides Deck • May 2026</span>
+                        <span style="color: var(--primary); font-weight: 700;">Completed</span>
+                    </div>
+                    <div class="doc-actions">
+                        <a href="https://docs.google.com/presentation/d/1XiCf0UOYcLQm_sCHD4PnYTWG4c3VxBnN/edit?usp=drive_link&ouid=106394585571580795995&rtpof=true&sd=true"
+                            target="_blank" rel="noopener noreferrer" class="btn-doc-view">👁️ View Slides</a>
+                        <a href="https://docs.google.com/presentation/d/1XiCf0UOYcLQm_sCHD4PnYTWG4c3VxBnN/export/pptx"
+                            target="_blank" rel="noopener noreferrer" class="btn-doc-download">📥 Download PPTX</a>
+                    </div>
+                </div>
+
+                <!-- Slide 3: Progress Presentation-2 (Slide 13 Criteria) -->
+                <div class="slide-card">
+                    <div class="slide-deck-icon">📊</div>
+                    <span class="pillar-badge">Phase 03 Assessment</span>
+                    <h3>Progress Presentation - 2</h3>
+                    <p>
+                        Live demonstration deck detailing full multi-modal microservices integration, AMS Quality
+                        Grading algorithms, SHAP explainability, and Prophet models.
+                    </p>
+                    <div class="slide-meta">
+                        <span>Google Slides Deck • Aug 2026</span>
+                        <span style="color: var(--primary); font-weight: 700;">Completed</span>
+                    </div>
+                    <div class="doc-actions">
+                        <a href="https://docs.google.com/presentation/d/1WK0vMKrljlCqKbwVigv422V5zjq6ncGs/edit?usp=drive_link&ouid=106394585571580795995&rtpof=true&sd=true"
+                            target="_blank" rel="noopener noreferrer" class="btn-doc-view">👁️ View Slides</a>
+                        <a href="https://docs.google.com/presentation/d/1WK0vMKrljlCqKbwVigv422V5zjq6ncGs/export/pptx"
+                            target="_blank" rel="noopener noreferrer" class="btn-doc-download">📥 Download PPTX</a>
+                    </div>
+                </div>
+
+                <!-- Slide 4: Final Presentation (Slide 13 Criteria: Provisions for Future Presentations) -->
+                <div class="slide-card">
+                    <div class="slide-deck-icon" style="background: #e0f2fe; color: #0284c7;">🎯</div>
+                    <span class="pillar-badge" style="background: #e0f2fe; color: #0369a1;">Provisional • Future
+                        Phase</span>
+                    <h3>Final Presentation Slides</h3>
+                    <p>
+                        Provisions established for the comprehensive final capstone viva presentation deck covering
+                        empirical contributions, evaluation benchmarks, and clinical audits.
+                    </p>
+                    <div class="slide-meta">
+                        <span>50 Slides (Est.) • Nov 2026</span>
+                        <span style="color: #0369a1; font-weight: 700;">Provisional</span>
+                    </div>
+                    <div class="doc-actions">
+                        <span class="btn-doc-pending">⏳ Scheduled Nov 2026</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================================================
+         SECTION 6: ABOUT US (Slide 14: Group Members, Photos, Contacts, Achievements)
+         ======================================================================== -->
+    <section id="about" class="section bg-white">
+        <div class="content-wrapper">
+            <div class="section-header">
+                <span class="section-tag">Supervision &amp; Research Group</span>
+                <h2>About Our Research Team</h2>
+                <p>
+                    Meet the academic supervisor and student researchers behind the Bio-Heritage AI project at SLIIT
+                    Faculty of Computing.
+                </p>
+            </div>
+
+            <!-- Academic Supervisor Card -->
+            <div class="supervisor-card">
+                <div class="supervisor-avatar">TS</div>
+                <div class="supervisor-details">
+                    <span class="role">Academic Project Supervisor</span>
+                    <h3>Ms. Thisara Shyamalee</h3>
+                    <p>
+                        Senior Lecturer, Department of Computer Science &amp; Software Engineering, Faculty of
+                        Computing, Sri Lanka Institute of Information Technology (SLIIT). Guiding research design,
+                        architectural integrity, and academic review across all 4 research components.
+                    </p>
+                    <div class="supervisor-contacts">
+                        <span>📧 <strong>Email:</strong> thisara.s@sliit.lk</span>
+                        <span>🏛️ <strong>Institution:</strong> SLIIT Malabe Campus</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4 Group Members Grid (Slide 14 Criteria: Photos/Avatars, Contacts, Achievements) -->
+            <div class="team-grid-4">
+                <!-- Member 1 -->
+                <div class="member-card">
+                    <div class="member-avatar">NA</div>
+                    <span class="member-badge-component">Component 01 Lead</span>
+                    <h3>Ariyarathna L.M.N.R.</h3>
+                    <div class="member-id">IT22547774 • Undergraduate</div>
+                    <div class="member-topic">
+                        <strong>Medicinal Plant Botanical Authentication &amp; Adulterant Detection</strong>
+                    </div>
+                    <div class="member-achievements">
+                        <strong>Key Achievements:</strong>
+                        <ul style="margin: 4px 0 0 16px; padding: 0;">
+                            <li>Curated 3,095 specimen dataset at Haldummulla Botanical Garden.</li>
+                            <li>Trained 21-class EfficientNetB0 achieving 86.9% accuracy.</li>
+                            <li>Integrated Out-of-Distribution (OOD) unknown weed rejection.</li>
+                        </ul>
+                    </div>
+                    <div class="member-contacts">
+                        <a href="mailto:it22547774@my.sliit.lk" class="member-contact-link">📧
+                            it22547774@my.sliit.lk</a>
+                    </div>
+                </div>
+
+                <!-- Member 2 -->
+                <div class="member-card">
+                    <div class="member-avatar">TR</div>
+                    <span class="member-badge-component">Component 02 Lead</span>
+                    <h3>Rajawardhana M.B.G.T.N.</h3>
+                    <div class="member-id">Undergraduate • IT Specialization</div>
+                    <div class="member-topic">
+                        <strong>Health-Context-Aware RAG Sri Lankan Herb Knowledge Assistant</strong>
+                    </div>
+                    <div class="member-achievements">
+                        <strong>Key Achievements:</strong>
+                        <ul style="margin: 4px 0 0 16px; padding: 0;">
+                            <li>Engineered 1,550-record grounded Ayurvedic herb knowledgebase.</li>
+                            <li>Designed SVM intent classification &amp; FAISS semantic re-ranking.</li>
+                            <li>Implemented TreeSHAP explainability for Random Forest safety models.</li>
+                        </ul>
+                    </div>
+                    <div class="member-contacts">
+                        <a href="mailto:thanujanipun6@gmail.com" class="member-contact-link">📧
+                            thanujanipun6@gmail.com</a>
+                    </div>
+                </div>
+
+                <!-- Member 3 -->
+                <div class="member-card">
+                    <div class="member-avatar">SD</div>
+                    <span class="member-badge-component">Component 03 Lead</span>
+                    <h3>Darmasena M.S.T. (Sahan)</h3>
+                    <div class="member-id">Undergraduate • IT Specialization</div>
+                    <div class="member-topic">
+                        <strong>Medicinal Leaf Pathology Detection &amp; Quality Scoring System</strong>
+                    </div>
+                    <div class="member-achievements">
+                        <strong>Key Achievements:</strong>
+                        <ul style="margin: 4px 0 0 16px; padding: 0;">
+                            <li>Fine-tuned EfficientNetB4 achieving 97.4% accuracy across 5 states.</li>
+                            <li>Formulated novel Ayurvedic Medicinal Suitability (AMS) Quality Grading (A–D).</li>
+                            <li>Enforced bi-lingual agricultural remediation &amp; withholding buffer warnings.</li>
+                        </ul>
+                    </div>
+                    <div class="member-contacts">
+                        <a href="mailto:sahandarmasena0@gmail.com" class="member-contact-link">📧
+                            sahandarmasena0@gmail.com</a>
+                    </div>
+                </div>
+
+                <!-- Member 4 -->
+                <div class="member-card">
+                    <div class="member-avatar">WM</div>
+                    <span class="member-badge-component">Component 04 Lead</span>
+                    <h3>Wickramarachchi</h3>
+                    <div class="member-id">Undergraduate • IT Specialization</div>
+                    <div class="member-topic">
+                        <strong>Medicinal Plant Climate Forecasting &amp; Habitat Suitability Prediction</strong>
+                    </div>
+                    <div class="member-achievements">
+                        <strong>Key Achievements:</strong>
+                        <ul style="margin: 4px 0 0 16px; padding: 0;">
+                            <li>Built Facebook Prophet time-series models for 2026–2030 climate forecasts.</li>
+                            <li>Modeled precipitation and temperature shifts across agro-zones.</li>
+                            <li>Deployed interactive web GIS portal at plant-woad.vercel.app.</li>
+                        </ul>
+                    </div>
+                    <div class="member-contacts">
+                        <a href="mailto:research.ayurveda@sliit.lk" class="member-contact-link">📧
+                            research.ayurveda@sliit.lk</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================================================
+         SECTION 7: CONTACT US (Slide 15: General Contacts & E-mail Template)
+         ======================================================================== -->
+    <section id="contact" class="section bg-light">
+        <div class="content-wrapper">
+            <div class="section-header">
+                <span class="section-tag">Communication &amp; Inquiries</span>
+                <h2>Contact Our Research Group</h2>
+                <p>
+                    Reach out for inquiries regarding dataset access, academic collaborations, model evaluation, or CDAP
+                    project feedback.
+                </p>
+            </div>
+
+            <div class="contact-layout-grid">
+                <!-- Left: General Contact Details (Slide 15 Criteria) -->
+                <div class="contact-info-panel">
+                    <div class="contact-info-block">
+                        <div class="contact-icon-box">🏛️</div>
+                        <div class="contact-text">
+                            <h4>Academic Institution</h4>
+                            <p>
+                                Sri Lanka Institute of Information Technology (SLIIT)<br>
+                                Faculty of Computing, New Kandy Road, Malabe, Sri Lanka.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-block">
+                        <div class="contact-icon-box">📧</div>
+                        <div class="contact-text">
+                            <h4>Official Research E-mails</h4>
+                            <p>
+                                Primary: <a href="mailto:research.ayurveda@sliit.lk">research.ayurveda@sliit.lk</a><br>
+                                Supervisor: <a href="mailto:thisara.s@sliit.lk">thisara.s@sliit.lk</a>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-block">
+                        <div class="contact-icon-box">📞</div>
+                        <div class="contact-text">
+                            <h4>General Phone Contacts</h4>
+                            <p>
+                                Academic Department: +94 11 754 4801<br>
+                                CDAP Coordination Desk: +94 11 754 4800
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-block">
+                        <div class="contact-icon-box">🌐</div>
+                        <div class="contact-text">
+                            <h4>Project Portals &amp; Repositories</h4>
+                            <p>
+                                SLIIT CDAP Portal: <a href="http://cdap.sliit.lk/" target="_blank"
+                                    rel="noopener noreferrer">http://cdap.sliit.lk/</a><br>
+                                Group Code: <code>R26J-IT-020</code>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Pure HTML General E-mail Template & Form (Slide 15 Criteria) -->
+                <div class="contact-form-panel" id="contact-template-box">
+                    <h3>✉️ General E-mail Template &amp; Inquiry</h3>
+                    <p class="sub">
+                        Use the standard inquiry form below or copy the pre-formatted General E-mail Template directly
+                        into your email client.
+                    </p>
+
+                    <!-- Pure HTML Form using standard mailto action (Zero JS) -->
+                    <form action="mailto:research.ayurveda@sliit.lk" method="post" enctype="text/plain">
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+                            <div class="form-group">
+                                <label for="name-field">Your Full Name:</label>
+                                <input type="text" id="name-field" name="Name" class="form-control"
+                                    placeholder="e.g. Dr. Kasun Perera" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email-field">Your Email Address:</label>
+                                <input type="email" id="email-field" name="Email" class="form-control"
+                                    placeholder="e.g. kasun@university.lk" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject-field">Subject / Inquiry Title:</label>
+                            <input type="text" id="subject-field" name="Subject" class="form-control"
+                                placeholder="e.g. [CDAP Inquiry] Botanical Dataset Access Request" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message-field">Message:</label>
+                            <textarea id="message-field" name="Message" class="form-control" rows="3"
+                                placeholder="Please write your inquiry, collaboration interest, or feedback..."
+                                required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-form-submit">
+                            📤 Send via Default Email Client
+                        </button>
+                    </form>
+
+                    <!-- Slide 15 Explicit Requirement: "General e-mail template" -->
+                    <div style="margin-top: 20px;">
+                        <label style="font-size: 0.82rem; font-weight: 700; color: #334155;">General E-mail Template
+                            (Copy &amp; Send Format):</label>
+                        <pre class="email-template-box">To: research.ayurveda@sliit.lk
+CC: thisara.s@sliit.lk
+Subject: [CDAP R26J-IT-020 Inquiry] &lt;Insert Subject Here&gt;
+
+Dear Bio-Heritage AI Research Group / Supervisor,
+
+My name is &lt;Your Full Name&gt; from &lt;Your Institution / Organization&gt;.
+I am writing regarding the CDAP Research Project "Bio-Heritage AI: Multi-Modal Framework for Preserving Sri Lankan Indigenous Medical Knowledge".
+
+Inquiry Details:
+----------------------------------------------------------------------
+&lt;Please specify your inquiry: dataset request, collaboration, or evaluation&gt;
+----------------------------------------------------------------------
+
+Kindly let me know the appropriate next steps or documentation.
+
+Best regards,
+&lt;Your Name&gt;
+&lt;Your Contact Email / Phone&gt;</pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 13. Footer -->
     <footer>
-        <p>&copy; 2026 Sri Lanka Institute of Information Technology (SLIIT). All Rights Reserved.</p>
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <h4>Bio-Heritage AI</h4>
+                    <p>
+                        A Multi-Modal Artificial Intelligence Framework for Preserving Sri Lankan Indigenous Medical
+                        Knowledge. Developed as part of the B.Sc. (Hons) in Information Technology degree at SLIIT.
+                    </p>
+                    <div style="font-size: 0.8rem; color: var(--accent-gold);">
+                        Supervised by: Ms. Thisara Shyamalee
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h5>Main Tabs</h5>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#domain">Domain</a></li>
+                        <li><a href="#milestones">Milestones</a></li>
+                        <li><a href="#documents">Documents</a></li>
+                        <li><a href="#slides">Slides</a></li>
+                        <li><a href="#about">About us</a></li>
+                        <li><a href="#contact">Contact us</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h5>Research Domains</h5>
+                    <ul class="footer-links">
+                        <li><a href="#domain-lit-survey">Literature Survey</a></li>
+                        <li><a href="#domain-gap">Research Gap</a></li>
+                        <li><a href="#domain-problem">Problem Statement</a></li>
+                        <li><a href="#domain-objectives">Objectives</a></li>
+                        <li><a href="#domain-methodology">Methodology</a></li>
+                        <li><a href="#domain-tech">Technologies</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h5>CDAP Resources</h5>
+                    <ul class="footer-links">
+                        <li><a href="http://cdap.sliit.lk/" target="_blank" rel="noopener noreferrer">CDAP Portal ↗</a>
+                        </li>
+                        <li><a href="#documents">Project Charter</a></li>
+                        <li><a href="#documents">Proposal Document</a></li>
+                        <li><a href="#milestones">Evaluation Rubric</a></li>
+                        <li><a href="#contact">General Inquiries</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div>
+                    &copy; 2026 Bio-Heritage AI (Group R26J-IT-020) • Sri Lanka Institute of Information Technology
+                    (SLIIT). All Rights Reserved.
+                </div>
+                <div>
+                    Built strictly with pure HTML &amp; CSS (CDAP Compliant • Max 20 MB)
+                </div>
+            </div>
+        </div>
     </footer>
 
 </body>
+
 </html>
